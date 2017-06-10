@@ -1,20 +1,25 @@
-
-//{
-// cards: [],
-// decks: []
-//
-//}
-
 const cards = (state,action) => {
   switch(action.type){
     case 'ADD_CARD':
-      let newCard = Object.assign({}, action.data, {
-        score: 1,
-        id: +new Date
-      });
+        state.concat([
+          Object.assign({}, action.data, {
+            score: 1,
+            id: +new Date
+          })
+      ]);
+    default:
+      return state || [];
+  }
+};
 
-      return state.concat([newCard]);
-
+const decks = (state,action) => {
+  switch(action.type){
+    case 'ADD_CARD':
+        state.concat([
+          Object.assign({}, action.data, {
+            id: +new Date
+          })
+      ]);
     default:
       return state || [];
   }
@@ -22,18 +27,13 @@ const cards = (state,action) => {
 
 
 
-
 const store = Redux.createStore(Redux.combineReducers({
-  cards
+  cards,
+  decks
 }));
 
-//manual
-/*(function (state, action){
-  return{
-    cards: card(state.cards, action)
-    decks: decks(state.decks, action)
-  };
-});*/
+//retorna false se não houverem cartas
+console.log("Card Lenght", cards.lenght===0);
 
 store.subscribe(()=> {
   console.log(store.getState())
