@@ -1,4 +1,4 @@
-Packages needed to be installed:
+Packages needed to be installed:<br/>
 nodejs
 npm
 nodejs-legacy
