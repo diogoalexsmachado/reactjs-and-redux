@@ -7,7 +7,6 @@ const Profile = ({name, handle}) =>
   <TwitterAvatar handle={handle} />
   </div>
 
-
 ReactDOM.render(
   <Profile name='Diogo Machado' handle='betterthaboss' />,
   document.getElementById('root'));
