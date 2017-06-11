@@ -35,19 +35,11 @@ const store = Redux.createStore(Redux.combineReducers({
 //retorna false se não houverem cartas
 console.log("Card Lenght", cards.lenght===0);
 
-store.subscribe(()=> {
-  console.log(store.getState())
-});
+const App = (props) => {
+  return (<div className='app'>
+      <h1> Hello React </h1>
+    </div>
+  );
+};
 
-store.dispatch({
-  type: 'ADD_CARD',
-  data: {
-    front:'font',
-    back:'back'
-  }
-});
-
-store.dispatch({
-  type: 'ADD_CARD',
-  data: {}
-});
+ReactDOM.render(<App />, document.getElementById('root')); 
