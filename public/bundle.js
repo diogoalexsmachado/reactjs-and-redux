@@ -28,7 +28,7 @@ var cards = function cards(state, action) {
   }
 };
 
-var deck = function deck(state, action) {
+var decks = function decks(state, action) {
   switch (action.type) {
     case 'ADD_DECK':
       var newDeck = { name: action.data, id: +new Date() };
@@ -66,7 +66,7 @@ const decks = (state,action) => {
 
 var store = Redux.createStore(Redux.combineReducers({
   cards: cards,
-  deck: deck,
+  decks: decks,
   addingDeck: addingDeck
 }));
 
