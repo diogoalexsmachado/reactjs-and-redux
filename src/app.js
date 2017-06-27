@@ -93,7 +93,7 @@ const Sidebar = React.createClass({
 
     <ul>
       {props.decks.map((deck,i) =>
-        <li key={i}> {deck.name} </li>
+        <li key={i}> {deck.name} </li> 
       )}
     </ul>
     {props.addingDeck && <input ref='add' onKeyPress={this.createDeck}/> }
